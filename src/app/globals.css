@@ -1,0 +1,171 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="ltr"] body {
+    direction: ltr;
+    text-align: left;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.dark {
+    --font-primary-color: #EFE2C4;
+}
+
+.light {
+    --font-primary-color: #513252;
+}
+
+/* Custom styling for the body (light & dark mode) */
+body {
+    background-color: var(--background-color);
+    color: var(--font-primary-color);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Example: Dark mode background and text color changes */
+.dark {
+    background-color: #513252;
+}
+
+.light {
+    background-color: #FCF9F2;
+}
+
+.navlink {
+    @apply no-underline text-sm font-normal px-3 py-3 lg:py-0
+}
+
+.hover-underline {
+    @apply lg:border-b !border-primary dark:!border-primary-dark border-opacity-0 dark:border-opacity-0 hover:border-opacity-100 dark:hover:border-opacity-100
+}
+
+.custom-btn {
+    @apply text-sm lg:text-base w-[170px] h-[50px] rounded-tr-[8px] rounded-bl-[8px]
+}
+
+.btn-filled {
+    @apply bg-primary dark:bg-primary-dark text-primary-dark dark:text-primary
+}
+
+.btn-transparent {
+    @apply bg-transparent text-primary-dark dark:text-primary
+}
+
+.main-heading {
+    @apply text-2xl lg:text-7xl font-semibold
+}
+
+.sub-heading {
+    @apply text-sm lg:text-lg font-bold
+}
+
+.sub-text {
+    @apply text-sm lg:text-lg font-normal
+}
+
+.caption {
+    @apply text-sm lg:text-lg font-normal lg:max-w-[600]
+}
+
+.text-green {
+    @apply !text-tertiary dark:!text-tertiary-dark
+}
+
+.service-circle {
+    @apply w-[100px] h-[100px] rounded-full flex items-center justify-center bg-primary dark:bg-secondary-dark
+}
+
+.home-circle {
+    @apply mb-3 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#D9C4E7] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
+}
+
+.move-to-top {
+    @apply animate-bounce fixed bottom-4 right-6 w-[50px] h-[50px] rounded-full flex items-center justify-center bg-primary dark:bg-primary-dark
+}
+
+.custom-border {
+    @apply border border-primary dark:border-primary-dark;
+}
+
+.chip {
+    @apply px-3 py-1 rounded-full !text-primary dark:!text-primary-dark bg-quaternary dark:bg-quaternary-dark
+}
+
+.help-box {
+    @apply bg-light-purple rounded-lg p-6 flex items-center justify-center flex-col min-h-[300px]
+}
+
+.tab-trigger {
+    @apply text-sm lg:text-lg py-2 px-3 !text-primary dark:!text-primary-dark data-[state=active]:!text-white dark:data-[state=active]:!text-white data-[state=active]:!bg-tertiary
+}
+
+.testimonial-card {
+    @apply relative min-h-[450px] flex flex-col lg:flex-row items-center gap-10 rounded-lg p-8 lg:p-16 !bg-[#F1ECEC] dark:!bg-[#775E7A]
+}
+
+.border-left {
+    @apply relative before:w-[3px] before:h-[40px] before:bg-primary dark:before:bg-primary-dark before:absolute before:left-0 before:top-2 pe-2
+}
+
+.max-w-section {
+    @apply max-w-[1440px] ps-[1.5rem] lg:ps-[5rem] pe-[1.5rem] lg:pe-[5rem]
+}
+
+.company-slider {
+    @apply py-[25px] bg-transparent dark:bg-primary-dark
+}
+
+.form-control {
+    @apply text-sm lg:text-base text-primary dark:text-primary-dark focus:shadow-none hover:shadow-none placeholder-primary dark:placeholder-primary-dark border !border-primary dark:!border-primary-dark !bg-light-secondary dark:!bg-primary rounded-tl-[0px] rounded-tr-[8px] rounded-bl-[8px] rounded-br-[0px] py-3
+}
+
+.slick-slide {
+    padding: 0 15px;
+    /* Adjust the left/right padding for spacing */
+}
+
+.carousel-indicators,
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+    }
+}
