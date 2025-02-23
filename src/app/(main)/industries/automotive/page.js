@@ -41,7 +41,7 @@ const Automotive = () => {
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-12">
                         <Tabs defaultValue={t('indust_automotive_s1_h')}>
-                            <div className='flex overflow-x-auto py-8 hide-scrollbar'>
+                            <div className={`flex ${(locale == 'en' || !locale) ? 'flex-row' : 'flex-row-reverse'} overflow-x-auto py-8 hide-scrollbar`}>
                                 {
                                     data?.map((item, index) => (
                                         <TabsList key={index} className="mt-8 bg-transparent">

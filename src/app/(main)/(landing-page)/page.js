@@ -53,7 +53,7 @@ function page() {
                             {t('landingpage_h_3')}
                         </h2>
 
-                        <p className='caption border-left ps-3 mt-8'>
+                        <p className={`caption ${(locale == 'en' || !locale) ? 'border-left' : 'border-right'} mt-8`}>
                             {t('landingpage_b')}
                         </p>
                     </div>
@@ -71,7 +71,7 @@ function page() {
                 <div id={ROUTES_IDS.ABOUT_US} className="grid grid-cols-12 gap-4 my-24 lg:my-36">
                     <div className="col-span-12 lg:col-span-8 !order-2 lg:!order-1">
                         <h2 className={`main-heading text-center ${(locale == 'en' || !locale) ? 'lg:!text-left' : 'lg:!text-right'} `}>{t('aboutus_h')}</h2>
-                        <p className='caption border-left ps-3 mt-8'>
+                        <p className={`caption ${(locale == 'en' || !locale) ? 'border-left' : 'border-right'} mt-8`}>
                             {t('aboutus_b')}
                         </p>
 
@@ -92,10 +92,10 @@ function page() {
                     <div className="col-span-12 mb-8 lg:mb-12">
                         <div className='text-center'>
                             <h2 className='main-heading '>
-                                {t('ourservices_h')}
+                                {t('our_services_h')}
                             </h2>
                             <p className='sub-text text-center mt-8'>
-                                {t('ourservices_b')}
+                                {t('our_services_b')}
                             </p>
                         </div>
                     </div>

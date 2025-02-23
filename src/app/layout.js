@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, IBM_Plex_Sans_Arabic  } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./Providers";
 import { NextIntlClientProvider } from "next-intl";
@@ -16,16 +16,22 @@ const inter = Inter({
     variable: "--font-inter",
 });
 
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
+    weight: ["100", "200", "300", "400", "500", "600", "700"],
+    subsets: ["arabic"],
+    variable: "--font-ibm-plex-sans-arabic",
+});
 
 export default async function RootLayout({ children }) {
     const locale = await getLocale();
     const messages = await getMessages();
     const direction = locale === "ar" ? "rtl" : "ltr";
+    const fontFamily = locale === "ar" ? ibmPlexSansArabic.variable : inter.variable;
 
     return (
         <html lang={locale} dir={direction} suppressHydrationWarning>
             <body
-                className={`${inter.variable} antialiased`}
+                className={`${fontFamily} antialiased`}
             >
                 <NextIntlClientProvider messages={messages}>
                     <Providers>

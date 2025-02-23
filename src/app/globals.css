@@ -3,6 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ROOT STYLE */
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        --primary: theme("colors.primary");
+        --secondary: theme("colors.secondary");
+        --tertiary: theme("colors.tertiary");
+        --quaternary: theme("colors.quaternary");
+        --light-purple: theme("colors.light-purple");
+        --light-secondary: theme("colors.light-secondary");
+
+        --primary-dark: theme("colors.primary-dark");
+        --secondary-dark: theme("colors.secondary-dark");
+        --tertiary-dark: theme("colors.tertiary-dark");
+        --quaternary-dark: theme("colors.quaternary-dark");
+        --white: theme("colors.white");
+
+        --font-inter: theme("fontFamily.inter");
+        --font-ibm: theme("fontFamily.ibm");
+    }
+}
+
+/*  HTML STYLES */
 html {
     scroll-behavior: smooth;
 }
@@ -10,59 +33,50 @@ html {
 html[dir="rtl"] body {
     direction: rtl;
     text-align: right;
+    font-family: var(--font-ibm);
 }
 
 html[dir="ltr"] body {
     direction: ltr;
     text-align: left;
+    font-family: var(--font-inter);
 }
 
+/*  WEBKIT SCROLLBAR STYLES */
 ::-webkit-scrollbar {
     width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: var(--background-color);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: white;
+    background: var(--white);
 }
 
-.hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+/* LIGHT AND DARK FONT */
 
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
+.light {
+    --font-primary-color: var(--primary);
+    background-color: var(--light-secondary);
 }
 
 .dark {
-    --font-primary-color: #EFE2C4;
-}
-
-.light {
-    --font-primary-color: #513252;
+    --font-primary-color: var(--primary-dark);
+    background-color: var(--primary);
 }
 
 /* Custom styling for the body (light & dark mode) */
 body {
     background-color: var(--background-color);
     color: var(--font-primary-color);
-    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
 
-/* Example: Dark mode background and text color changes */
-.dark {
-    background-color: #513252;
-}
-
-.light {
-    background-color: #FCF9F2;
+/* CUSTOM CLASSES */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
 }
 
 .navlink {
@@ -98,7 +112,7 @@ body {
 }
 
 .caption {
-    @apply text-sm lg:text-lg font-normal lg:max-w-[600]
+    @apply text-sm lg:text-lg font-normal lg:max-w-[680px]
 }
 
 .text-green {
@@ -138,7 +152,11 @@ body {
 }
 
 .border-left {
-    @apply relative before:w-[3px] before:h-[40px] before:bg-primary dark:before:bg-primary-dark before:absolute before:left-0 before:top-2 pe-2
+    @apply relative before:w-[3px] before:h-[40px] before:bg-primary dark:before:bg-primary-dark before:absolute before:left-0 before:top-2 ps-3
+}
+
+.border-right {
+    @apply relative before:w-[3px] before:h-[40px] before:bg-primary dark:before:bg-primary-dark before:absolute before:right-0 before:top-1 ps-3
 }
 
 .max-w-section {
@@ -155,17 +173,10 @@ body {
 
 .slick-slide {
     padding: 0 15px;
-    /* Adjust the left/right padding for spacing */
 }
 
 .carousel-indicators,
 .carousel-control-prev,
 .carousel-control-next {
     display: none;
-}
-
-@layer base {
-    :root {
-        --radius: 0.5rem;
-    }
 }

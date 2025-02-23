@@ -26,7 +26,7 @@ const AboutUs = () => {
                 <div className="grid grid-cols-12 gap-4 mb-24 lg:mb-36">
                     <div className="col-span-12 lg:col-span-8 !order-2 lg:!order-1">
                         <h2 className={`main-heading text-center ${(locale == 'en' || !locale) ? 'lg:!text-left' : 'lg:!text-right'}`}>{t('aboutus_h')}</h2>
-                        <p className='caption border-left ps-3 mt-8'>
+                        <p className={`caption ${(locale == 'en' || !locale) ? 'border-left' : 'border-right'} mt-8`}>
                             {t('aboutus_b')}
                         </p>
 
@@ -46,7 +46,7 @@ const AboutUs = () => {
                 <div className="grid grid-cols-12 gap-4 my-24 lg:my-36">
                     <div className="col-span-12 lg:col-span-8 !order-2 lg:!order-1 my-auto">
                         <h2 className={`main-heading text-center ${(locale == 'en' || !locale) ? 'lg:!text-left' : 'lg:!text-right'} `}>{t('our_vision_h')}</h2>
-                        <p className='caption border-left ps-3 mt-8'>
+                        <p className={`caption ${(locale == 'en' || !locale) ? 'border-left' : 'border-right'} mt-8`}>
                             {t('our_vision_b')}
                         </p>
                     </div>

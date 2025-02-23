@@ -20,22 +20,21 @@ module.exports = {
 				xxl: '1400px'
 			},
 			colors: {
-				primary: '#513252',
-				secondary: '#C8B897',
-				tertiary: '#A8C585',
-				quaternary: '#E2E8F0',
+				'primary': '#513252',
+				'secondary': '#C8B897',
+				'tertiary': '#A8C585',
+				'quaternary': '#E2E8F0',
 				'light-purple': '#F9F1FF',
 				'light-secondary': "#FCF9F2",
 				'primary-dark': '#EFE2C4',
 				'secondary-dark': '#C8B897',
 				'tertiary-dark': '#A8C585',
-				'quaternary-dark': '#494949'
+				'quaternary-dark': '#494949',
+				'white':"#FFFFFF",
 			},
 			fontFamily: {
-				sans: [
-					'Inter',
-					'sans-serif'
-				]
+				inter: ['Inter', 'sans-serif'],
+				ibm: ['IBM Plex Sans Arabic', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
