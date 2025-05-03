@@ -12,9 +12,9 @@ import Link from 'next/link'
 import { ROUTES, ROUTES_IDS } from '@/routes'
 import IconBar from '@/components/common/IconBar'
 import MoveToTop from '@/components/common/MoveToTop'
-import Map from '@/components/common/Map'
 import Head from 'next/head'
 import { META_DESCRIPTION_HOME, META_TITLE_HOME } from '@/constants'
+import MapWrapper from '@/components/wrapper/MapWrapper'
 
 function page() {
     const t = useTranslations('Common');
@@ -154,7 +154,7 @@ function page() {
 
                     {/* Map */}
                     <div className="col-span-12">
-                        <Map />
+                        <MapWrapper />
                     </div>
 
                     <FooterLink />

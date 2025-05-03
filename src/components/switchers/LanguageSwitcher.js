@@ -1,3 +1,4 @@
+'use client'
 import React, { useTransition } from 'react'
 import { useLocale } from 'next-intl';
 import { setUserLocale } from '@/services/locale';
