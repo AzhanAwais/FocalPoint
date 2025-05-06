@@ -42,7 +42,7 @@ const InsightCard = ({ limit = 0 }) => {
                 blogs?.map((item, index) => (
                     <div key={index} className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mb-4 md:mb-0">
                         <Link href={locale == 'en' ? item?.section_3_i : item?.section_4_i} target='_blank'>
-                            <div className='w-full h-[420px] overflow-hidden '>
+                            <div className='w-full overflow-hidden '>
                                 <img
                                     className='w-full h-full object-cover object-center transform transition-transform duration-300 hover:scale-105'
                                     src={

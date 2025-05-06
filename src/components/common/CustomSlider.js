@@ -19,7 +19,7 @@ const CustomSlider = () => {
             {
                 breakpoint: 768, // Adjusts for smaller screens
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 3,
                 },
             },
         ],

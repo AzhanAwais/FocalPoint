@@ -3,6 +3,7 @@ import { META_DESCRIPTION_ABOUT_CONTACT_US, META_TITLE_CONTACT_US } from '@/cons
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 
 const page = () => {
@@ -25,14 +26,16 @@ const page = () => {
                         <ContactForm />
                     </div>
 
-                    <div className="col-span-12 lg:col-span-6  order-1 lg:order-2">
-                        <Image
-                            src={'/images/contact-us.png'}
-                            alt="Map showing the location of our office in Saudi Arabia"
-                            layout='fill'
-                            objectFit='cover'
-                            className='!relative mx-auto'
-                        />
+                    <div className="col-span-12 lg:col-span-6 order-1 lg:order-2">
+                        <Link href={"https://maps.app.goo.gl/17w7SJzSM3WcxNCR6"} target="_blank" rel="noopener noreferrer">
+                            <Image
+                                src={'/images/contact-us.png'}
+                                alt="Map showing the location of our office in Saudi Arabia"
+                                layout='fill'
+                                objectFit='cover'
+                                className='!relative mx-auto'
+                            />
+                        </Link>
                     </div>
                 </div>
             </div>
