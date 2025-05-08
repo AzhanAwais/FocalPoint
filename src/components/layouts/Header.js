@@ -45,21 +45,21 @@ const Header = () => {
     return (
         <Navbar
             expand="lg"
-            className="bg-light-secondary dark:bg-primary sticky-top py-3"
+            className="bg-light-secondary dark:bg-primary sticky-top py-2 px-[0.75rem] lg:px-0"
             expanded={expanded}
             onToggle={setExpanded}
         >
             <Container fluid>
-                <h2 className="text-primary dark:text-primary-dark">
+                <Navbar.Toggle className='bg-primary-dark focus:shadow-none' aria-controls="basic-navbar-nav" />
+
+                <h2 className="text-primary dark:text-primary-dark ">
                     <Link onClick={handleNavClick} href={ROUTES.HOME}>
                         <img className='lg:ms-4 w-[180px] lg:w-[220px]' src={(theme == 'light' || !theme) ? '/images/logo-light.png' : '/images/logo-dark.png'} alt='focal point' />
                     </Link>
                 </h2>
 
-                <Navbar.Toggle className='bg-primary-dark focus:shadow-none' aria-controls="basic-navbar-nav" />
-
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className={locale == 'en' ? "ms-auto" : "!ms-auto"}>
+                    <Nav className={locale == 'en' ? "ms-auto lg:items-center items-start" : "!ms-auto lg:items-center items-start"}>
                         <Link onClick={handleNavClick} href={moveToHomeArray.includes(pathname) ? `/#${ROUTES_IDS.HOME}` : `#${ROUTES_IDS.HOME}`} className='navlink hover-underline'>
                             {t('menu_1')}
                         </Link>

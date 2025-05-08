@@ -32,14 +32,14 @@ function page() {
                 <IconBar />
 
                 {/* Carousel */}
-                <div className="grid grid-cols-12 gap-4">
+                <div id={ROUTES_IDS.HOME} className="grid grid-cols-12 gap-4">
                     <div className="col-span-12">
                         <CustomCarousel />
                     </div>
                 </div>
 
                 {/* Generate Actionable Insights */}
-                <div id={ROUTES_IDS.HOME} className="grid grid-cols-12 gap-4 my-24 lg:my-36">
+                <div className="grid grid-cols-12 gap-4 my-24 lg:my-36">
                     <div className="col-span-12 lg:col-span-8 !order-2 lg:!order-1">
                         <h2 className='main-heading hidden lg:block'>
                             {t('landingpage_h_1')} <br />

@@ -22,6 +22,7 @@ const ServicesBox = () => {
                                 className='h-20'
                                 lightsrc={'./images/up-arrow.png'}
                                 darksrc={'./images/up-arrow-dark.png'}
+                                alt='Automotive market research services provider in Saudi Arabia'
                             />
                         </div>
 
@@ -46,6 +47,7 @@ const ServicesBox = () => {
                                 className='h-20'
                                 lightsrc={'./images/up-arrow.png'}
                                 darksrc={'./images/up-arrow-dark.png'}
+                                alt="Market analysis and consulting for fast-moving consumer goods"
                             />
                         </div>
 
@@ -69,6 +71,7 @@ const ServicesBox = () => {
                                 className='h-20'
                                 lightsrc={'./images/down-arrow.png'}
                                 darksrc={'./images/down-arrow-dark.png'}
+                                alt="Custom market research services for Saudi Arabia’s automotive sector"
                             />
                         </div>
                     </div>
@@ -93,6 +96,7 @@ const ServicesBox = () => {
                                 className='h-20'
                                 lightsrc={'./images/down-arrow.png'}
                                 darksrc={'./images/down-arrow-dark.png'}
+                                alt="Detailed shopper research to boost retail performance."
                             />
                         </div>
                     </div>
@@ -124,6 +128,7 @@ const ServicesBox = () => {
                                 className='h-20'
                                 lightsrc={'./images/up-arrow.png'}
                                 darksrc={'./images/up-arrow-dark.png'}
+                                alt="Expert business strategy consulting for sustainable growth in Jeddah."
                             />
                         </div>
 
@@ -149,6 +154,7 @@ const ServicesBox = () => {
                                 className='h-20'
                                 lightsrc={'./images/up-arrow.png'}
                                 darksrc={'./images/up-arrow-dark.png'}
+                                alt="Innovative branding solutions to elevate your market presence." 
                             />
                         </div>
 
@@ -172,6 +178,7 @@ const ServicesBox = () => {
                                 className='h-20'
                                 lightsrc={'./images/down-arrow.png'}
                                 darksrc={'./images/down-arrow-dark.png'}
+                                alt="Focal Point's modern office in Jeddah, Saudi Arabia."
                             />
                         </div>
                     </div>
@@ -195,6 +202,7 @@ const ServicesBox = () => {
                                 className='h-20'
                                 lightsrc={'./images/down-arrow.png'}
                                 darksrc={'./images/down-arrow-dark.png'}
+                                alt="Best Service provider in Saudia Arabia"
                             />
                         </div>
                     </div>

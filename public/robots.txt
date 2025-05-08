@@ -1,0 +1,6 @@
+
+# /public/robots.txt
+User-agent: *
+Disallow: /messages/
+Disallow: /components.json
+Disallow: /jsconfig.json

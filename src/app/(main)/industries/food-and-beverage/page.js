@@ -1,14 +1,13 @@
 import React from 'react'
 import BackButton from '@/components/common/BackButton';
 import { FOOD_AND_BEVERAGE_DATA, META_DESCRIPTION_FOOD_AND_BEVRAGES, META_TITLE_FOOD_AND_BEVRAGES } from '@/constants';
-import { useLocale, useTranslations } from 'next-intl';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useTranslations } from 'next-intl';
 import Head from 'next/head';
+import TabsRender from '@/components/industries/TabsRender';
 
 const FoodAndBeverage = () => {
     const t = useTranslations('Common');
     const data = FOOD_AND_BEVERAGE_DATA(t)
-    const locale = useLocale();
 
     return (
         <>
@@ -41,49 +40,7 @@ const FoodAndBeverage = () => {
 
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-12">
-                        <Tabs defaultValue={t('indust_food_s1_h')} >
-                            <div className={`flex ${(locale == 'en' || !locale) ? 'flex-row' : 'flex-row-reverse'} overflow-x-auto py-8 hide-scrollbar`}>
-                                {
-                                    data?.map((item, index) => (
-                                        <TabsList key={index} className="bg-transparent ">
-                                            <TabsTrigger
-                                                className='tab-trigger'
-                                                value={item?.tabKey}
-                                            >
-                                                {item?.heading}
-                                            </TabsTrigger>
-                                        </TabsList>
-                                    ))
-                                }
-                            </div>
-
-                            {
-                                data?.map((item, index) => (
-                                    <TabsContent key={index} value={item?.tabKey}>
-                                        <div>
-                                            <h2 className='sub-heading '>{item?.heading}</h2>
-                                            <p className='sub-text mt-8'>{item?.content}</p>
-                                        </div>
-
-                                        <div className='mt-8'>
-                                            <h2 className='sub-heading '>{item?.helpHeading}</h2>
-                                            <div className="grid grid-cols-12 gap-4 mt-8" dir={locale == 'ar' ? 'rtl' : 'ltr'}> 
-                                                {
-                                                    item?.helpImages?.map((dt, index) => (
-                                                        <div key={index} className='col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3'>
-                                                            <div className='help-box'>
-                                                                <img className='w-[80px] h-[80px]' src={dt?.imageUrl} alt={dt?.alt} />
-                                                                <h3 className='sub-heading mt-4 text-center !text-primary'>{dt?.heading}</h3>
-                                                            </div>
-                                                        </div>
-                                                    ))
-                                                }
-                                            </div>
-                                        </div>
-                                    </TabsContent>
-                                ))
-                            }
-                        </Tabs>
+                        <TabsRender defaultValue={'indust_food_s1_h'} data={data} />
                     </div>
                 </div>
             </div>

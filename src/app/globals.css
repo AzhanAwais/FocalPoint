@@ -80,11 +80,23 @@ body {
 }
 
 .navlink {
-    @apply no-underline text-sm font-normal px-3 py-3 lg:py-0
+    @apply block h-full no-underline text-sm font-normal lg:px-3 py-3 lg:py-0
 }
 
-.hover-underline {
+/* .hover-underline {
     @apply lg:border-b !border-primary dark:!border-primary-dark border-opacity-0 dark:border-opacity-0 hover:border-opacity-100 dark:hover:border-opacity-100
+} */
+
+.hover-underline {
+    @apply relative
+}
+
+.hover-underline::after {
+    @apply content-[''] absolute -bottom-2 left-0 w-0 h-[0px] lg:h-[1px] bg-primary dark:bg-primary-dark
+}
+
+.hover-underline:hover::after {
+    @apply w-full
 }
 
 .custom-btn {
@@ -174,9 +186,33 @@ body {
 .slick-slide {
     padding: 0 15px;
 }
+ 
+[id] {
+    scroll-margin-top: 100px;
+}
 
-.carousel-indicators,
-.carousel-control-prev,
-.carousel-control-next {
+@media (max-width: 993px) {
+    [id] {
+        scroll-margin-top: 200px;
+    }
+}
+
+.banner .carousel-indicators,
+.banner .carousel-control-prev,
+.banner .carousel-control-next {
     display: none;
+}
+
+
+.testimonial-carousel .carousel-control-next-icon,
+.testimonial-carousel .carousel-control-prev-icon {
+   @apply hidden;
+}
+
+.testimonial-carousel .carousel-indicators button {
+    @apply w-[10px] h-[10px] rounded-[100%] bg-primary/30 dark:bg-primary-dark/30;
+}
+
+.testimonial-carousel .carousel-indicators button.active {
+    @apply bg-primary dark:bg-primary-dark;
 }
