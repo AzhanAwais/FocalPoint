@@ -4,6 +4,7 @@ import { INDUSTRIAL_MANUFACTURING_DATA, META_DESCRIPTION_INDUSTRIAL_MANUFACTURIN
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
+import Image from 'next/image';
 
 const IndustrialAndManufacturing = () => {
     const t = useTranslations('Common');
@@ -32,9 +33,16 @@ const IndustrialAndManufacturing = () => {
                     </div>
 
                     <div className="col-span-12 lg:col-span-4">
-                        <div>
-                            <img src="/images/industrialNew.png" alt="Innovative branding solutions to elevate your market presence." />
-                        </div>
+                        <Image
+                            src="/images/industrialNew.png"
+                            alt="Innovative branding solutions to elevate your market presence."
+                            width={500}
+                            height={500}
+                            loading="lazy"
+                            quality={80}
+                            placeholder="blur"
+                            blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2VlZWVlZSIvPjwvc3ZnPg==" // Simple gray SVG
+                        />
                     </div>
                 </div>
 

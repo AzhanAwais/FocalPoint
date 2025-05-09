@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from 'next/image';
 
 const TabsRender = ({ defaultValue, data }) => {
     const t = useTranslations('Common');
@@ -69,7 +70,17 @@ const TabsRender = ({ defaultValue, data }) => {
                                     item?.helpImages?.map((dt, index) => (
                                         <div key={index} className='col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3'>
                                             <div className='help-box'>
-                                                <img className='w-[80px] h-[80px]' src={dt?.imageUrl} alt={dt?.alt} />
+                                                <Image
+                                                    className='w-[80px] h-[80px]' 
+                                                    src={dt?.imageUrl}
+                                                    alt={dt?.alt} 
+                                                    width={80}
+                                                    height={80}
+                                                    loading="lazy"
+                                                    quality={80}
+                                                    placeholder="blur"
+                                                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2VlZWVlZSIvPjwvc3ZnPg==" // Simple gray SVG
+                                                />
                                                 <h3 className='sub-heading mt-4 text-center !text-primary'>{dt?.heading}</h3>
                                             </div>
                                         </div>

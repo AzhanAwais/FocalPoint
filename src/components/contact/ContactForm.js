@@ -1,7 +1,7 @@
 'use client'
 import { useToast } from '@/hooks/use-toast';
 import { useTranslations } from 'next-intl';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import moment from 'moment';
 import emailjs from '@emailjs/browser';

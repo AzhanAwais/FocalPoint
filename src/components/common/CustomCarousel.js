@@ -1,33 +1,16 @@
 'use client'
-import { db } from '@/utils/firebase';
-import { collection, getDocs } from 'firebase/firestore';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Carousel } from 'react-bootstrap'
 
-const CustomCarousel = () => {
+const CustomCarousel = ({ banners }) => {
     const locale = useLocale();
-    const [banners, setBanners] = useState([]);
-
-    const fetchBanners = async () => {
-        const bannersCollection = collection(db, "Banners");
-        const bannersSnapshot = await getDocs(bannersCollection);
-        const bannersList = bannersSnapshot?.docs?.map(doc => ({
-            ...doc.data()
-        }))?.filter((item) => item.status == true)?.sort((a, b) => a.position - b.position)
-        setBanners(bannersList);
-    };
 
     const convertSecToMilli = (sec) => {
         return sec * 1000;
     }
-
-    useEffect(() => {
-        fetchBanners();
-    }, []);
-
     return (
         <Carousel className='banner'>
             {
@@ -42,6 +25,9 @@ const CustomCarousel = () => {
                                         layout='fill'
                                         objectFit='contain'
                                         className='!relative'
+                                        loading='eager'
+                                        placeholder="blur"
+                                        blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2VlZWVlZSIvPjwvc3ZnPg==" // Simple gray SVG
                                     />
                                     :
                                     <video src={locale == 'en' ? item?.media_url_en : item?.media_url_ar} type="video/mp4" className='w-full' autoPlay muted loop />

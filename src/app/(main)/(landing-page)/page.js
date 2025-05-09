@@ -15,6 +15,7 @@ import MoveToTop from '@/components/common/MoveToTop'
 import Head from 'next/head'
 import { META_DESCRIPTION_HOME, META_TITLE_HOME } from '@/constants'
 import MapWrapper from '@/components/wrapper/MapWrapper'
+import Banner from '@/components/common/Banner'
 
 function page() {
     const t = useTranslations('Common');
@@ -34,7 +35,7 @@ function page() {
                 {/* Carousel */}
                 <div id={ROUTES_IDS.HOME} className="grid grid-cols-12 gap-4">
                     <div className="col-span-12">
-                        <CustomCarousel />
+                        <Banner />
                     </div>
                 </div>
 

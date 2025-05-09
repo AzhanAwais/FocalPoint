@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { INDUSTRY_AUTOMOTIVE_DATA, META_DESCRIPTION_AUTOMOTIVE, META_TITLE_AUTOMOTIVE } from '@/constants';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
+import Image from 'next/image';
 
 const Automotive = () => {
     const t = useTranslations('Common');
@@ -31,9 +32,16 @@ const Automotive = () => {
                     </div>
 
                     <div className="col-span-12 lg:col-span-4">
-                        <div>
-                            <img src="/images/automative_page.png" alt="Custom market research services for Saudi Arabia’s automotive sector" />
-                        </div>
+                        <Image
+                            src={'/images/automative_page.png'}
+                            alt="Custom market research services for Saudi Arabia’s automotive sector"
+                            width={500}
+                            height={500}
+                            loading="lazy"
+                            quality={80}
+                            placeholder="blur"
+                            blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2VlZWVlZSIvPjwvc3ZnPg==" // Simple gray SVG
+                        />
                     </div>
                 </div>
 

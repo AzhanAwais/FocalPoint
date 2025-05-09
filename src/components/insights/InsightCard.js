@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import moment from 'moment';
+import Image from 'next/image';
 
 const InsightCard = ({ limit = 0 }) => {
     const [blogs, setBlogs] = useState([]);
@@ -30,7 +31,7 @@ const InsightCard = ({ limit = 0 }) => {
         }
 
         setBlogs(blogs);
-    };
+    }
 
     useEffect(() => {
         fetchBlogs();
@@ -43,23 +44,30 @@ const InsightCard = ({ limit = 0 }) => {
                     <div key={index} className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mb-4 md:mb-0">
                         <Link href={locale == 'en' ? item?.section_3_i : item?.section_4_i} target='_blank'>
                             <div className='w-full overflow-hidden '>
-                                <img
-                                    className='w-full h-full object-cover object-center transform transition-transform duration-300 hover:scale-105'
+                                <Image
+                                    className='transform transition-transform duration-300 hover:scale-105'
                                     src={
                                         locale == 'en' ?
                                             item?.section_1_i || './images/general-placeholder.jpg'
                                             :
                                             item?.section_2_i || './images/general-placeholder.jpg'
                                     }
-                                    alt={
-                                        locale == 'en' ?
-                                            item?.title?.en
-                                            :
-                                            item?.title?.ar
-                                    }
-                                    onError={(e) => {
-                                        e.target.src = './images/general-placeholder.jpg'
+                                    alt={locale == 'en' ? item?.title?.en : item?.title?.ar}
+                                    width={500}
+                                    height={300}
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                        objectFit: 'cover',
+                                        objectPosition: 'center'
                                     }}
+                                    onError={(e) => {
+                                        e.currentTarget.src = placeholderImage;
+                                    }}
+                                    loading="lazy"
+                                    quality={80}
+                                    placeholder="blur"
+                                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2VlZWVlZSIvPjwvc3ZnPg==" // Simple gray SVG
                                 />
                             </div>
                             <span className='inline-block mt-1 text-sm lg:text-base'>

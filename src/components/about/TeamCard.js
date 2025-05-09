@@ -2,6 +2,7 @@
 import { db } from '@/utils/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useLocale } from 'next-intl';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 const TeamCard = () => {
@@ -34,7 +35,17 @@ const TeamCard = () => {
             {
                 team?.map((item, index) => (
                     <div key={index} className="transform transition-transform duration-300 hover:translate-y-[-10px] col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
-                        <img className='w-full' src={item?.profile_photo} />
+                        <Image
+                            className='w-full'
+                            src={item?.profile_photo} 
+                            alt={"user-image"}
+                            width={500}
+                            height={500}
+                            loading="lazy"
+                            quality={80}
+                            placeholder="blur"
+                            blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2VlZWVlZSIvPjwvc3ZnPg==" // Simple gray SVG
+                        />
 
                         <h6 className='mt-3 sub-heading'>
                             {
