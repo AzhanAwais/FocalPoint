@@ -4,8 +4,9 @@ import ChangeableImage from '@/components/common/ChangeableImage';
 import CustomButton from '@/components/common/CustomButton';
 import FooterLink from '@/components/common/FooterLink';
 import Partner from '@/components/partner/Partner';
-import { META_DESCRIPTION_ABOUT, META_TITLE_ABOUT } from '@/constants';
 import { ROUTES } from '@/routes';
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
 import { useLocale, useTranslations } from 'next-intl';
 import Head from 'next/head';
 import React from 'react'
@@ -13,12 +14,25 @@ import React from 'react'
 const AboutUs = () => {
     const t = useTranslations('Common');
     const locale = useLocale()
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_ABOUT}</title>
-                <meta name="description" content={META_DESCRIPTION_ABOUT} />
+                <title>{META.ABOUT_US.title}</title>
+                <meta name="description" content={META.ABOUT_US.description} />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.ABOUT_US}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.ABOUT_US.title} />
+                <meta property="og:description" content={META.ABOUT_US.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.ABOUT_US}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.ABOUT_US.title} />
+                <meta name="twitter:description" content={META.ABOUT_US.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.ABOUT_US.keywords} />
             </Head>
 
             <div className="max-w-section m-auto pt-10 lg:pt-20">
@@ -30,7 +44,7 @@ const AboutUs = () => {
                             {t('aboutus_b')}
                         </p>
 
-                        <CustomButton redirectLink={ROUTES.CONTACT_US}  className="mt-8" type="filled" text="get_in_touch" />
+                        <CustomButton redirectLink={ROUTES.CONTACT_US} className="mt-8" type="filled" text="get_in_touch" />
                     </div>
 
                     <div className="col-span-12 lg:col-span-4 order-1 lg:order-2 mx-auto">

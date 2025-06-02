@@ -1,5 +1,4 @@
 import CustomButton from '@/components/common/CustomButton'
-import CustomCarousel from '@/components/common/CustomCarousel'
 import IndustriesCard from '@/components/industries/IndustriesCard'
 import InsightCard from '@/components/insights/InsightCard'
 import ServicesBox from '@/components/services/ServicesBox'
@@ -13,19 +12,34 @@ import { ROUTES, ROUTES_IDS } from '@/routes'
 import IconBar from '@/components/common/IconBar'
 import MoveToTop from '@/components/common/MoveToTop'
 import Head from 'next/head'
-import { META_DESCRIPTION_HOME, META_TITLE_HOME } from '@/constants'
 import MapWrapper from '@/components/wrapper/MapWrapper'
 import Banner from '@/components/common/Banner'
+import { META_AR } from '@/seo/seo-ar'
+import { META_EN } from '@/seo/seo-en'
 
 function page() {
     const t = useTranslations('Common');
     const locale = useLocale();
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_HOME}</title>
-                <meta name="description" content={META_DESCRIPTION_HOME} />
+                <title>{META.HOME.title}</title>
+                <meta name="description" content={META.HOME.description} />
+                <meta name="robots" content="index, follow" />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.HOME}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.HOME.title} />
+                <meta property="og:description" content={META.HOME.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.HOME}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.HOME.title} />
+                <meta name="twitter:description" content={META.HOME.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.HOME.keywords} />
             </Head>
 
             <div className="relative max-w-section m-auto pt-10 pb-20">

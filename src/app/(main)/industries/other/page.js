@@ -1,19 +1,36 @@
 import React from 'react'
 import BackButton from '@/components/common/BackButton';
-import { META_DESCRIPTION_OTHER, META_TITLE_OTHER, OTHER_DATA } from '@/constants';
+import { OTHER_DATA } from '@/constants';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
 import Image from 'next/image';
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
+import { ROUTES } from '@/routes';
+
 const Other = () => {
     const t = useTranslations('Common');
     const data = OTHER_DATA(t)
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_OTHER}</title>
-                <meta name="description" content={META_DESCRIPTION_OTHER} />
+                <title>{META.INDUSTRIES.OTHER.title}</title>
+                <meta name="description" content={META.INDUSTRIES.OTHER.description} />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.OTHER}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.INDUSTRIES.OTHER.title} />
+                <meta property="og:description" content={META.INDUSTRIES.OTHER.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.OTHER}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.INDUSTRIES.OTHER.title} />
+                <meta name="twitter:description" content={META.INDUSTRIES.OTHER.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.INDUSTRIES.OTHER.keywords} />
             </Head>
 
             <div className="max-w-section m-auto pt-10 lg:pt-20">

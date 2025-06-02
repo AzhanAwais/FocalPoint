@@ -31,3 +31,5 @@ export const SOCIAL_ROUTES = {
     FACEBOOK: "https://www.facebook.com/focalpointksa/",
     LINKEDIN: "https://www.linkedin.com/company/focalpointksa/",
 }
+
+export const DOMAIN = "https://focalpoint.com.sa"

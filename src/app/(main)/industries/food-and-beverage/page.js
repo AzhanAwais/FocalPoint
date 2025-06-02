@@ -1,20 +1,36 @@
 import React from 'react'
 import BackButton from '@/components/common/BackButton';
-import { FOOD_AND_BEVERAGE_DATA, META_DESCRIPTION_FOOD_AND_BEVRAGES, META_TITLE_FOOD_AND_BEVRAGES } from '@/constants';
+import { FOOD_AND_BEVERAGE_DATA } from '@/constants';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
 import Image from 'next/image';
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
+import { ROUTES } from '@/routes';
 
 const FoodAndBeverage = () => {
     const t = useTranslations('Common');
     const data = FOOD_AND_BEVERAGE_DATA(t)
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_FOOD_AND_BEVRAGES}</title>
-                <meta name="description" content={META_DESCRIPTION_FOOD_AND_BEVRAGES} />
+                <title>{META.INDUSTRIES.FOOD_AND_BEVERAGE.title}</title>
+                <meta name="description" content={META.INDUSTRIES.FOOD_AND_BEVERAGE.description} />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.FOOD_AND_BEVERAGE}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.INDUSTRIES.FOOD_AND_BEVERAGE.title} />
+                <meta property="og:description" content={META.INDUSTRIES.FOOD_AND_BEVERAGE.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.FOOD_AND_BEVERAGE}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.INDUSTRIES.FOOD_AND_BEVERAGE.title} />
+                <meta name="twitter:description" content={META.INDUSTRIES.FOOD_AND_BEVERAGE.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.INDUSTRIES.FOOD_AND_BEVERAGE.keywords} />
             </Head>
 
             <div className="max-w-section m-auto pt-10 lg:pt-20">

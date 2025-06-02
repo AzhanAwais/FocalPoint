@@ -925,43 +925,43 @@ export const OTHER_DATA = (t) => ([
 ])
 
 
-// META TITLE AND DESCRIPTION
+// // META TITLE AND DESCRIPTION
 
-export const META_TITLE_HOME = 'Market Research & Business Consulting in Saudi Arabia - Focal Point'
-export const META_DESCRIPTION_HOME = 'Discover top-notch market research, business consulting, and brand positioning services in Saudi Arabia. Specializing in qualitative and quantitative research to help your business thrive.'
+// export const META_TITLE_HOME = 'Market Research & Business Consulting in Saudi Arabia - Focal Point'
+// export const META_DESCRIPTION_HOME = 'Discover top-notch market research, business consulting, and brand positioning services in Saudi Arabia. Specializing in qualitative and quantitative research to help your business thrive.'
 
-export const META_TITLE_ABOUT = 'About Us | Leading Market Research & Consulting Firm in Saudi Arabia'
-export const META_DESCRIPTION_ABOUT = 'Learn about Focal Point, a trusted partner for market research and business consulting in Saudi Arabia. Delivering data-driven insights and actionable strategies.'
+// export const META_TITLE_ABOUT = 'About Us | Leading Market Research & Consulting Firm in Saudi Arabia'
+// export const META_DESCRIPTION_ABOUT = 'Learn about Focal Point, a trusted partner for market research and business consulting in Saudi Arabia. Delivering data-driven insights and actionable strategies.'
 
-export const META_TITLE_CONTACT_US = "Contact Us | Focal Point | Market Research & Consulting in Saudi Arabia"
-export const META_DESCRIPTION_ABOUT_CONTACT_US = 'Get in touch with [Your Company Name], the leading market research and business consulting firm in Saudi Arabia. We’re here to support your growth with expert insights.'
+// export const META_TITLE_CONTACT_US = "Contact Us | Focal Point | Market Research & Consulting in Saudi Arabia"
+// export const META_DESCRIPTION_ABOUT_CONTACT_US = 'Get in touch with [Your Company Name], the leading market research and business consulting firm in Saudi Arabia. We’re here to support your growth with expert insights.'
 
-export const META_TITLE_AUTOMOTIVE = 'Automotive Market Research | Saudi Arabia'
-export const META_DESCRIPTION_AUTOMOTIVE = 'Drive success with expert automotive market research and analysis in Saudi Arabia. Insights into consumer behavior, product trends, and market dynamics.'
+// export const META_TITLE_AUTOMOTIVE = 'Automotive Market Research | Saudi Arabia'
+// export const META_DESCRIPTION_AUTOMOTIVE = 'Drive success with expert automotive market research and analysis in Saudi Arabia. Insights into consumer behavior, product trends, and market dynamics.'
 
-export const META_TITLE_GOVERNMENT_AND_PUBLIC_SECTOR = 'Government Market Research | Public Sector Consulting in Saudi Arabia'
-export const META_DESCRIPTION_GOVERNMENT_AND_PUBLIC_SECTOR = 'Expert market research and consulting for the public sector in Saudi Arabia. Offering insights for policy development and effective governance.'
+// export const META_TITLE_GOVERNMENT_AND_PUBLIC_SECTOR = 'Government Market Research | Public Sector Consulting in Saudi Arabia'
+// export const META_DESCRIPTION_GOVERNMENT_AND_PUBLIC_SECTOR = 'Expert market research and consulting for the public sector in Saudi Arabia. Offering insights for policy development and effective governance.'
 
-export const META_TITLE_FMCG = 'FMCG Market Research | Saudi Arabia'
-export const META_DESCRIPTION_FMCG = 'Boost your FMCG strategy with tailored market research services in Saudi Arabia. Gain insights into consumer preferences and market trends.'
+// export const META_TITLE_FMCG = 'FMCG Market Research | Saudi Arabia'
+// export const META_DESCRIPTION_FMCG = 'Boost your FMCG strategy with tailored market research services in Saudi Arabia. Gain insights into consumer preferences and market trends.'
 
-export const META_TITLE_REAL_STATE = 'Real Estate Market Research | Saudi Arabia'
-export const META_DESCRIPTION_REAL_STATE = 'Delivering tailored real estate market insights in Saudi Arabia. Expert analysis to support property investments, development, and market trends.'
+// export const META_TITLE_REAL_STATE = 'Real Estate Market Research | Saudi Arabia'
+// export const META_DESCRIPTION_REAL_STATE = 'Delivering tailored real estate market insights in Saudi Arabia. Expert analysis to support property investments, development, and market trends.'
 
-export const META_TITLE_FOOD_AND_BEVRAGES = 'Food & Beverage Market Research | Saudi Arabia'
-export const META_DESCRIPTION_FOOD_AND_BEVRAGES = 'Explore food and beverage market trends in Saudi Arabia with our expert research services. From product testing to consumer insights, we’ve got you covered.'
+// export const META_TITLE_FOOD_AND_BEVRAGES = 'Food & Beverage Market Research | Saudi Arabia'
+// export const META_DESCRIPTION_FOOD_AND_BEVRAGES = 'Explore food and beverage market trends in Saudi Arabia with our expert research services. From product testing to consumer insights, we’ve got you covered.'
 
-export const META_TITLE_CONSULTANT_AND_AGENCIES = 'Market Research for Consultants & Agencies | Saudi Arabia'
-export const META_DESCRIPTION_CONSULTANT_AND_AGENCIES = 'Providing market research services for consultants and agencies in Saudi Arabia. Insights for brand positioning, strategy development, and growth.'
+// export const META_TITLE_CONSULTANT_AND_AGENCIES = 'Market Research for Consultants & Agencies | Saudi Arabia'
+// export const META_DESCRIPTION_CONSULTANT_AND_AGENCIES = 'Providing market research services for consultants and agencies in Saudi Arabia. Insights for brand positioning, strategy development, and growth.'
 
-export const META_TITLE_INDUSTRIAL_MANUFACTURING = 'Industrial Manufacturing Market Research | Saudi Arabia'
-export const META_DESCRIPTION_INDUSTRIAL_MANUFACTURING = 'Expert market research for industrial manufacturing in Saudi Arabia. Gain insights into consumer behavior, market trends, and pricing strategies.'
+// export const META_TITLE_INDUSTRIAL_MANUFACTURING = 'Industrial Manufacturing Market Research | Saudi Arabia'
+// export const META_DESCRIPTION_INDUSTRIAL_MANUFACTURING = 'Expert market research for industrial manufacturing in Saudi Arabia. Gain insights into consumer behavior, market trends, and pricing strategies.'
 
-export const META_TITLE_TECHNOLOGY_AND_TELECOM = 'Technology & Telecom Research | Saudi Arabia'
-export const META_DESCRIPTION_TECHNOLOGY_AND_TELECOM = 'Stay ahead in tech and telecom with cutting-edge market research in Saudi Arabia. Insights into innovation, consumer behavior, and market trends.'
+// export const META_TITLE_TECHNOLOGY_AND_TELECOM = 'Technology & Telecom Research | Saudi Arabia'
+// export const META_DESCRIPTION_TECHNOLOGY_AND_TELECOM = 'Stay ahead in tech and telecom with cutting-edge market research in Saudi Arabia. Insights into innovation, consumer behavior, and market trends.'
 
-export const META_TITLE_INSGIGHT = "Discover Insights, Services, and Industries with Us"
-export const META_DESCRIPTION_INSGIGHT = 'Explore actionable insights, diverse services, and tailored industry solutions. Stay informed with our latest blogs and connect with us for innovative solutions.'
+// export const META_TITLE_INSGIGHT = "Discover Insights, Services, and Industries with Us"
+// export const META_DESCRIPTION_INSGIGHT = 'Explore actionable insights, diverse services, and tailored industry solutions. Stay informed with our latest blogs and connect with us for innovative solutions.'
 
-export const META_TITLE_OTHER = 'Customized Market Research & Consulting Services | Saudi Arabia'
-export const META_DESCRIPTION_OTHER = 'Explore tailored market research and consulting solutions in Saudi Arabia. Specialized services for unique industries and business challenges to drive success.'
+// export const META_TITLE_OTHER = 'Customized Market Research & Consulting Services | Saudi Arabia'
+// export const META_DESCRIPTION_OTHER = 'Explore tailored market research and consulting solutions in Saudi Arabia. Specialized services for unique industries and business challenges to drive success.'

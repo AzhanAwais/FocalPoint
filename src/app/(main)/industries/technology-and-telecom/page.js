@@ -1,19 +1,36 @@
 import React from 'react'
 import BackButton from '@/components/common/BackButton';
-import { META_DESCRIPTION_TECHNOLOGY_AND_TELECOM, META_TITLE_TECHNOLOGY_AND_TELECOM, TECHNOLOGY_AND_TELECOM_DATA } from '@/constants';
+import { TECHNOLOGY_AND_TELECOM_DATA } from '@/constants';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
 import Image from 'next/image';
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
+import { ROUTES } from '@/routes';
+
 const TechnologyAndTelecom = () => {
     const t = useTranslations('Common');
     const data = TECHNOLOGY_AND_TELECOM_DATA(t)
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_TECHNOLOGY_AND_TELECOM}</title>
-                <meta name="description" content={META_DESCRIPTION_TECHNOLOGY_AND_TELECOM} />
+                <title>{META.INDUSTRIES.TECHNOLOGY_AND_TELECOM.title}</title>
+                <meta name="description" content={META.INDUSTRIES.TECHNOLOGY_AND_TELECOM.description} />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.TECHNOLOGY_AND_TELECOM}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.INDUSTRIES.TECHNOLOGY_AND_TELECOM.title} />
+                <meta property="og:description" content={META.INDUSTRIES.TECHNOLOGY_AND_TELECOM.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.TECHNOLOGY_AND_TELECOM}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.INDUSTRIES.TECHNOLOGY_AND_TELECOM.title} />
+                <meta name="twitter:description" content={META.INDUSTRIES.TECHNOLOGY_AND_TELECOM.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.INDUSTRIES.TECHNOLOGY_AND_TELECOM.keywords} />
             </Head>
 
             <div className="max-w-section m-auto pt-10 lg:pt-20">

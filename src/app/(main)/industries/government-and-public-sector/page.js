@@ -1,21 +1,37 @@
 "use client"
-import React, { useRef } from 'react'
+import React from 'react'
 import BackButton from '@/components/common/BackButton';
-import { GOVERNMENT_AND_PUBLIC_SECTOR_DATA, META_DESCRIPTION_GOVERNMENT_AND_PUBLIC_SECTOR, META_TITLE_GOVERNMENT_AND_PUBLIC_SECTOR } from '@/constants';
+import { GOVERNMENT_AND_PUBLIC_SECTOR_DATA } from '@/constants';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
 import Image from 'next/image';
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
+import { ROUTES } from '@/routes';
 
 const GovernmentAndPublicSector = () => {
   const t = useTranslations('Common');
   const data = GOVERNMENT_AND_PUBLIC_SECTOR_DATA(t)
+  const META = locale === 'ar' ? META_AR : META_EN
 
   return (
     <>
       <Head>
-        <title>{META_TITLE_GOVERNMENT_AND_PUBLIC_SECTOR}</title>
-        <meta name="description" content={META_DESCRIPTION_GOVERNMENT_AND_PUBLIC_SECTOR} />
+        <title>{META.INDUSTRIES.GOVERNMENT_AND_PUBLIC_SECTOR.title}</title>
+        <meta name="description" content={META.INDUSTRIES.GOVERNMENT_AND_PUBLIC_SECTOR.description} />
+        {/* Canonical URL */}
+        <link rel="canonical" href={`${DOMAIN}${ROUTES.GOVERNMENT_AND_PUBLIC_SECTOR}`} />
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content={META.INDUSTRIES.GOVERNMENT_AND_PUBLIC_SECTOR.title} />
+        <meta property="og:description" content={META.INDUSTRIES.GOVERNMENT_AND_PUBLIC_SECTOR.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${DOMAIN}${ROUTES.GOVERNMENT_AND_PUBLIC_SECTOR}`} />
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:title" content={META.INDUSTRIES.GOVERNMENT_AND_PUBLIC_SECTOR.title} />
+        <meta name="twitter:description" content={META.INDUSTRIES.GOVERNMENT_AND_PUBLIC_SECTOR.description} />
+        {/* Keywords */}
+        <meta name="keywords" content={META.INDUSTRIES.GOVERNMENT_AND_PUBLIC_SECTOR.keywords} />
       </Head>
 
       <div className="max-w-section m-auto pt-10 lg:pt-20">

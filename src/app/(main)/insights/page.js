@@ -1,17 +1,32 @@
 import InsightCard from '@/components/insights/InsightCard';
-import { META_DESCRIPTION_INSGIGHT, META_TITLE_INSGIGHT } from '@/constants';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import React from 'react'
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
+import { ROUTES } from '@/routes';
 
 const Insights = () => {
     const t = useTranslations('Common');
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_INSGIGHT}</title>
-                <meta name="description" content={META_DESCRIPTION_INSGIGHT} />
+                <title>{META.INSIGHTS.title}</title>
+                <meta name="description" content={META.INSIGHTS.description} />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.INSIGHTS}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.INSIGHTS.title} />
+                <meta property="og:description" content={META.INSIGHTS.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.INSIGHTS}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.INSIGHTS.title} />
+                <meta name="twitter:description" content={META.INSIGHTS.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.INSIGHTS.keywords} />
             </Head>
 
             <div className="max-w-section m-auto py-10 lg:py-20">

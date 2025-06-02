@@ -1,21 +1,38 @@
 import React from 'react'
 import BackButton from '@/components/common/BackButton'
 import { useTranslations } from 'next-intl';
-import { INDUSTRY_AUTOMOTIVE_DATA, META_DESCRIPTION_AUTOMOTIVE, META_TITLE_AUTOMOTIVE } from '@/constants';
+import { INDUSTRY_AUTOMOTIVE_DATA } from '@/constants';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
 import Image from 'next/image';
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
+import { ROUTES } from '@/routes';
 
 const Automotive = () => {
     const t = useTranslations('Common');
     const data = INDUSTRY_AUTOMOTIVE_DATA(t)
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_AUTOMOTIVE}</title>
-                <meta name="description" content={META_DESCRIPTION_AUTOMOTIVE} />
+                <title>{META.INDUSTRIES.AUTOMOTIVE.title}</title>
+                <meta name="description" content={META.INDUSTRIES.AUTOMOTIVE.description} />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.AUTMOTIVE}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.INDUSTRIES.AUTOMOTIVE.title} />
+                <meta property="og:description" content={META.INDUSTRIES.AUTOMOTIVE.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.AUTMOTIVE}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.INDUSTRIES.AUTOMOTIVE.title} />
+                <meta name="twitter:description" content={META.INDUSTRIES.AUTOMOTIVE.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.INDUSTRIES.AUTOMOTIVE.keywords} />
             </Head>
+
             <div className="max-w-section m-auto pt-10 lg:pt-20">
                 <div className="grid grid-cols-12 gap-4">
                     <div className='col-span-12'>

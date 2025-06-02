@@ -1,20 +1,36 @@
 import React from 'react'
 import BackButton from '@/components/common/BackButton';
-import { FMCG_DATA, META_DESCRIPTION_FMCG, META_TITLE_FMCG } from '@/constants';
+import { FMCG_DATA } from '@/constants';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
 import Image from 'next/image';
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
+import { ROUTES } from '@/routes';
 
 const Fmcg = () => {
     const t = useTranslations('Common');
     const data = FMCG_DATA(t)
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_FMCG}</title>
-                <meta name="description" content={META_DESCRIPTION_FMCG} />
+                <title>{META.INDUSTRIES.FMCG.title}</title>
+                <meta name="description" content={META.INDUSTRIES.FMCG.description} />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.FMCG}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.INDUSTRIES.FMCG.title} />
+                <meta property="og:description" content={META.INDUSTRIES.FMCG.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.FMCG}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.INDUSTRIES.FMCG.title} />
+                <meta name="twitter:description" content={META.INDUSTRIES.FMCG.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.INDUSTRIES.FMCG.keywords} />
             </Head>
 
             <div className="max-w-section m-auto pt-10 lg:pt-20">

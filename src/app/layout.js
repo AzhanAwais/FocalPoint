@@ -7,30 +7,31 @@ import { Toaster } from "@/components/ui/toaster"
 
 export const metadata = {
     title: "Focal Point",
-    description: "Market research company in saudi arabia,automotive research, trend analysis, survey, questionare,face",
+    description: "Focal Point is a market research company in Saudi Arabia offering consumer behavior analysis, real estate market reports, satisfaction surveys, automotive research, and strategic insights.",
     icons: {
         icon: "/favicon.png", // or .svg/.png depending on what you're using
     },
     keywords: [
-        "Market Research",
-        "Business Consulting",
-        "Saudi Arabia",
-        "Automotive",
-        "FMCG",
-        "Real Estate",
-        "Public Sector",
-        "Technology",
-        "Telecom",
-        "Consumer Insights",
-        "Quantitative Research",
-        "Qualitative Research",
-        "Data-driven Strategies",
-        "Brand Positioning",
-        "Product Trends",
-        "Survey",
-        "Questionnaire",
-        "Industrial Manufacturing",
-        "Food and Beverages"
+        "Market Research Company in Saudi Arabia",
+        "Comprehensive Marketing Studies",
+        "Consumer Behavior Analysis",
+        "Customer Satisfaction Measurement",
+        "Real Estate Market Reports",
+        "Automotive Market Research",
+        "Brand Analysis and Insights",
+        "Mystery Shopping Services",
+        "Strategic Marketing Plans",
+        "Customer Experience Optimization",
+        "Key Performance Indicators (KPIs)",
+        "Public Opinion Surveys",
+        "Business Intelligence Solutions",
+        "Market Feasibility Studies",
+        "Food Sector Research",
+        "Real Estate Market Analysis",
+        "Digital Market Studies",
+        "Statistical Data Analysis",
+        "Monthly Market Reports",
+        "Brand Monitoring Services"
     ],
 };
 

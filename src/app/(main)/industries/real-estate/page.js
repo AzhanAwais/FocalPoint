@@ -1,19 +1,36 @@
 import React from 'react'
 import BackButton from '@/components/common/BackButton';
-import { META_DESCRIPTION_REAL_STATE, META_TITLE_REAL_STATE, REAL_ESTATE_DATA } from '@/constants';
+import { REAL_ESTATE_DATA } from '@/constants';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import TabsRender from '@/components/industries/TabsRender';
 import Image from 'next/image';
+import { META_AR } from '@/seo/seo-ar';
+import { META_EN } from '@/seo/seo-en';
+import { ROUTES } from '@/routes';
+
 const RealEstate = () => {
     const t = useTranslations('Common');
     const data = REAL_ESTATE_DATA(t)
+    const META = locale === 'ar' ? META_AR : META_EN
 
     return (
         <>
             <Head>
-                <title>{META_TITLE_REAL_STATE}</title>
-                <meta name="description" content={META_DESCRIPTION_REAL_STATE} />
+                <title>{META.INDUSTRIES.REAL_ESTATE.title}</title>
+                <meta name="description" content={META.INDUSTRIES.REAL_ESTATE.description} />
+                {/* Canonical URL */}
+                <link rel="canonical" href={`${DOMAIN}${ROUTES.REAL_ESTATE}`} />
+                {/* Open Graph Meta Tags */}
+                <meta property="og:title" content={META.INDUSTRIES.REAL_ESTATE.title} />
+                <meta property="og:description" content={META.INDUSTRIES.REAL_ESTATE.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`${DOMAIN}${ROUTES.REAL_ESTATE}`} />
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:title" content={META.INDUSTRIES.REAL_ESTATE.title} />
+                <meta name="twitter:description" content={META.INDUSTRIES.REAL_ESTATE.description} />
+                {/* Keywords */}
+                <meta name="keywords" content={META.INDUSTRIES.REAL_ESTATE.keywords} />
             </Head>
 
             <div className="max-w-section m-auto pt-10 lg:pt-20">
